@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "###-----------------------------------------------------------###\n###           Text Mining with R for Non-coders               ###\n###            R script created by Daniel Choy                ###\n###   Carleton College Gould Library Research Data Service    ###\n###     Please Contact Kristin Partlo with any Questions      ###\n###-----------------------------------------------------------###\n\ninstall.packages(\"tsne\")\ninstall.packages(\"devtools\")\nlibrary(devtools)   #Rtools needs to be downloaded separately in Windows\ninstall_github(\"bmschmidt/wordVectors\")\nlibrary(wordVectors)\nlibrary(tsne)\nlibrary(readr)\n\n#Launch Morpheme Analyzer\nsystem(\"tctStart\")\ntargetData = read_csv(\"./Rscript/Oatmeal_Cookies.xlsx\")\n\n#Create TXT file for word2vec Train\nwrite.table(targetData$parsedContent,file = \"./trainTxt.txt\", row.names = FALSE, col.names = FALSE, quote = F)\n\n#Model Training\nmodel = train_word2vec(\"./trainTxt.txt\", output_file = \"w2vModel.bin\", \n                       threads=3, vectors=100, force = T)\n\n#confirm word2vector\nread.vectors(\"./w2vModel.bin\")\n\n#Extract associated keyword\nnearest_to(model,model[[\"cookies\"]], 20)\n\n#Extract associated keywords of 2 or more words\nnearest_to(model,model[[c(\"cookies\",\"oatmeal\")]], 20)\n\n#Calculate the words\nsubVec = model[rownames(model)==\"cookies\",] - model[rownames(model) == \"amazing\",] + model[rownames(model) == \"good\",]\nnearest_to(model, subVec, 20)\n\n#Visualize the entire relationship\nlibrary(extrafont) \npar(family=\"AppleGothic\") \n\nplot(model)\n\n######### Text Pre-Processing ############\n#Change to lower case letters\ntargetData$parsedContent = tolower(targetData$parsedContent)\n\n\n\n\n#Cosine similarity (= 1 - Cosine distance)\ncosineSimilarity(model[[\"cookies\"]], model[[\"amazing\"]])\n\n#Euclidean Distance\ndist(model[(row.names(model)==\"cookies\" | row.names(model)==\"amazing\"),])\n\n",
+    "created" : 1516261883515.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3502277336",
+    "id" : "188B6B8D",
+    "lastKnownWriteTime" : 1516299101,
+    "last_content_update" : 1516299101676,
+    "path" : "~/Desktop/Library Data Student Assistants/Text Mining/text_mining/Rscript/word2vec.R",
+    "project_path" : "Rscript/word2vec.R",
+    "properties" : {
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

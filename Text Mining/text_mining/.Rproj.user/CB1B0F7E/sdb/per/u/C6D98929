@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "###-----------------------------------------------------------###\n###           Text Mining with R for Non-coders               ###\n###            R script created by Daniel Choy                ###\n###   Carleton College Gould Library Research Data Service    ###\n###     Please Contact Kristin Partlo with any Questions      ###\n###-----------------------------------------------------------###\n\n\n\n\n\n\n\ninstall.packages(\"janeaustenr\")\ninstall.packages(\"dplyr\")\ninstall.packages(\"stringr\")\nlibrary(janeaustenr)\nlibrary(dplyr)\nlibrary(stringr)\n\noriginal_books <- austen_books() %>%\n  group_by(book) %>%\n  mutate(linenumber =row_number(),\n         chapter = cumsum(str_detect(text, regex(\"chapter [\\\\divxlc]\",\n                                                 ignocre_case = TRUE))) %>%\n  ungroup()\n\noriginal_books\n",
+    "created" : 1508749708674.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "548559763",
+    "id" : "C6D98929",
+    "lastKnownWriteTime" : 1507149648,
+    "last_content_update" : 1508749972419,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

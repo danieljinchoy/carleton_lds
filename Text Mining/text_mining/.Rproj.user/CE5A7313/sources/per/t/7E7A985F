@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1521017273050.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3513984012",
+    "id" : "7E7A985F",
+    "lastKnownWriteTime" : 1521050982,
+    "last_content_update" : 1521050982392,
+    "path" : "~/Desktop/Library Data Student Assistants/Text Mining/text_mining/Rscript/sentiment analysis.R",
+    "project_path" : "Rscript/sentiment analysis.R",
+    "properties" : {
+        "cursorPosition" : "11,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

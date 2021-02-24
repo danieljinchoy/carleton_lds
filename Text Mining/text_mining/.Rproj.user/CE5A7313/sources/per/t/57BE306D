@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1521017280704.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "377219762",
+    "id" : "57BE306D",
+    "lastKnownWriteTime" : 1521065461,
+    "last_content_update" : 1521065461924,
+    "path" : "~/Desktop/Library Data Student Assistants/Text Mining/text_mining/Rscript/keyword_analysis.R",
+    "project_path" : "Rscript/keyword_analysis.R",
+    "properties" : {
+        "cursorPosition" : "42,0",
+        "scrollLine" : "32"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

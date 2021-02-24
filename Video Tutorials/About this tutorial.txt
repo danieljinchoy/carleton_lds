@@ -1,0 +1,10 @@
+Video Tutorials on Text Mining for Non-Coders Brought to you buy Daniel Choy
+--- Carleton College Library Data Services --
+
+
+1. Introduction
+2. Text Handling
+3. Text Data Visualization
+4. Keyword Analysis Part 1
+5. Keyword Analysis Part 2
+6. Topic Clustering
